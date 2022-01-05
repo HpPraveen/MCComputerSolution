@@ -83,8 +83,6 @@ namespace MCComputerSolution.Migrations
 
                     b.HasKey("OId");
 
-                    b.HasIndex("ProductId");
-
                     b.ToTable("Orders");
                 });
 
@@ -132,17 +130,6 @@ namespace MCComputerSolution.Migrations
                     b.HasKey("ProductId");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("MCComputerSolution.Models.Order", b =>
-                {
-                    b.HasOne("MCComputerSolution.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
                 });
 #pragma warning restore 612, 618
         }

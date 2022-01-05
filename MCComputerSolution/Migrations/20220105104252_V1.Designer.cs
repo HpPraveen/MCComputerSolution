@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MCComputerSolution.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220105075310_V1")]
+    [Migration("20220105104252_V1")]
     partial class V1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -85,8 +85,6 @@ namespace MCComputerSolution.Migrations
 
                     b.HasKey("OId");
 
-                    b.HasIndex("ProductId");
-
                     b.ToTable("Orders");
                 });
 
@@ -134,17 +132,6 @@ namespace MCComputerSolution.Migrations
                     b.HasKey("ProductId");
 
                     b.ToTable("Products");
-                });
-
-            modelBuilder.Entity("MCComputerSolution.Models.Order", b =>
-                {
-                    b.HasOne("MCComputerSolution.Models.Product", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Product");
                 });
 #pragma warning restore 612, 618
         }

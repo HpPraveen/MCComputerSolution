@@ -9,6 +9,7 @@ namespace MCComputerSolution
         public MappingConfig()
         {
             CreateMap<Order, OrderDto>().ReverseMap();
+            CreateMap<Product, ProductDto>().ReverseMap();
         }
     }
 }

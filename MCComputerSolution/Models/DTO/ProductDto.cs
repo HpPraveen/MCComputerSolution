@@ -2,9 +2,9 @@
 {
     public class ProductDto
     {
-        public int PId { get; set; }
+        public int ProductId { get; set; }
 
-        public string? PName { get; set; }
+        public string? ProductName { get; set; }
 
         public int AvbQty { get; set; }
 

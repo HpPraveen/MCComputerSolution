@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MCComputerSolution.Models
 {
@@ -24,10 +23,6 @@ namespace MCComputerSolution.Models
 
         public decimal Discount { get; set; }
 
-        [Required]
         public decimal TotalAmt { get; set; }
-
-        [ForeignKey("ProductId")]
-        public virtual Product? Product { get; set; }
     }
 }
