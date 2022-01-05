@@ -63,6 +63,7 @@ namespace MCComputerSolution.Services
                     _genericUnitOfWork.OrderRepository.Insert(order);
                 }
                 _genericUnitOfWork.SaveChanges();
+                order.OrderNumber = order.OId.ToString();
                 return _mapper.Map<OrderDto>(order);
             }
             catch (Exception)
