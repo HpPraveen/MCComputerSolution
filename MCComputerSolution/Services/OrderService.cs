@@ -21,7 +21,7 @@ namespace MCComputerSolution.Services
         {
             try
             {
-                var orderList = _genericUnitOfWork.OrderRepository.Get(includeProperties: "Product").ToList();
+                var orderList = _genericUnitOfWork.OrderRepository.Get().ToList();
                 if (orderList == null) return null;
                 return _mapper.Map<List<OrderDto>>(orderList);
             }
@@ -36,7 +36,7 @@ namespace MCComputerSolution.Services
             try
             {
 #pragma warning disable CS8602 // Dereference of a possibly null reference.
-                var orderList = _genericUnitOfWork.OrderRepository.Get(o => o.OrderNumber.Contains(orderNumber), includeProperties: "Product").ToList();
+                var orderList = _genericUnitOfWork.OrderRepository.Get(o => o.OrderNumber.Contains(orderNumber)).ToList();
 #pragma warning restore CS8602 // Dereference of a possibly null reference.
                 if (orderList == null) return null;
                 return _mapper.Map<List<OrderDto>>(orderList);
